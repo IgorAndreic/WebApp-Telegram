@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/u1088u1077u1075u1080u1089u1090u1088u1072u1094u1080u1103.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styleguide.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/globals.css' %}" />
+</head>
+<body style="margin: 0; background: #e6edf2">
+  <div class="container-center-horizontal">
+    <form class="u1088u1077u1075u1080u1089u1090u1088u1072u1094u1080u1103 screen" method="POST" action="{% url 'user-login' %}">
+      {% csrf_token %}
+      <img class="frame-1" src="{% static 'img/frame-1.svg' %}" alt="Frame 1" />
+      <div class="text-6 text">
+        Вход в личный кабинет
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+      </div>
+      
+      <!-- Поля формы -->
+      <div class="overlap-group-1">
+        <div class="vin montserrat-normal-rhino-19px">VIN номер автомобиля</div>
+        {{ form.vin }}
+      </div>
+      <div class="overlap-group overlap">
+        <div class="text-8 text montserrat-normal-rhino-19px">Модель автомобиля</div>
+        {{ form.model }}
+      </div>
+      <div class="overlap-group overlap">
+        <div class="text-9 text montserrat-normal-rhino-19px">Марка автомобиля</div>
+        {{ form.brand}}
+      </div>
+      <div class="overlap-group2 overlap">
+        <button type="submit" class="rectangle-51 rectangle-1">Войти</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!--<meta name=description content="This site was generated with Anima. www.animaapp.com"/>-->
+    <!-- <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png'%}" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/u1076u1086u1073u1072u1074u1080u1090u1100-u1072u1074u1090u1086.css'%}"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleguide.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/globals.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/u1088u1077u1075u1080u1089u1090u1088u1072u1094u1080u1103.css' %}" />
+  </head>
+  <body style="margin: 0; background: #e6edf2">
+    <input
+      type="hidden"
+      id="anPageName"
+      name="page"
+      value="u1076u1086u1073u1072u1074u1080u1090u1100-u1072u1074u1090u1086"
+    />
+    <div class="container-center-horizontal">
+      <form class="u1076u1086u1073u1072u1074u1080u1090u1100-u1072u1074u1090u1086 screen" method="post" action="{% url 'add-car' %}">
+        {% csrf_token %}
+        <img class="x8508267-1" src="{% static 'img/8508267-1.png'%}" alt="8508267 1" />
+        <div class="flex-col">
+          <img class="travel_car_bmv_1741-1" src="{% static 'img/travel-car-bmv-1741-1.png'%}" alt="travel_car_BMV_1741 1" />
+          <div class="text-1 text">Добавить авто
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert {{ message.tags }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+          <div class="overlap-group4 overlap">
+            <div class="text-2 text montserrat-normal-rhino-15px">Модель автомобиля</div>
+            {{ form.model }}
+          </div>
+          <div class="overlap-group overlap">
+            <div class="text-3 text montserrat-normal-rhino-15px">Марка автомобиля</div>
+            {{ form.brand }}
+          </div>
+          <div class="overlap-group overlap">
+            <div class="vin montserrat-normal-rhino-15px">VIN номер автомобиля</div>
+            {{ form.vin }}
+          </div>
+          <div class="overlap-group2 overlap">
+            <div class="text-5 text montserrat-normal-rhino-15px">Добавить фото автомобиля</div>
+            <img class="carkeysicon_98578-1" src="{% static 'img/carkeysicon-98578-1.png'%}" alt="carkeysicon_98578 1" /> 
+          </div>
+          <button type="submit" class="rectangle-51 rectangle-1">Готово</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
