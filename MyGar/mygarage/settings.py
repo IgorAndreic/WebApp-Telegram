@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     
     #3-rd party
     'rest_framework',
+    "phonenumber_field",
     
     #custom
     'accounts',
